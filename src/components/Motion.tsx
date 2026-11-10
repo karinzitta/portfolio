@@ -31,8 +31,8 @@ const STAGGER = [
   ".pj-end",
 ].join(",");
 
-const STEP = 84;
 const MAX_STEPS = 12;
+const INTRO_WINDOW = 900;
 
 declare global {
   interface Window {
@@ -67,7 +67,7 @@ function prepareStagger(el: HTMLElement) {
   });
 }
 
-const PACE = 1.3;
+const PACE = 1.6;
 
 function prepareMap(fig: HTMLElement) {
   const set = (el: Element, ms: number) => (el as HTMLElement).style.setProperty("--d", `${Math.round(ms * PACE)}ms`);
@@ -108,11 +108,14 @@ export function Motion() {
     window.__motion = true;
     const root = document.documentElement;
     root.classList.remove("motion-off");
+    const started = performance.now();
 
     const io = new IntersectionObserver(
       (entries) => {
+        const intro = performance.now() - started < INTRO_WINDOW;
         for (const e of entries) {
           if (!e.isIntersecting) continue;
+          if (intro) e.target.classList.add("is-intro");
           e.target.classList.add("is-in");
           io.unobserve(e.target);
         }

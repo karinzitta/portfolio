@@ -88,7 +88,7 @@ export const portfolio: Portfolio = {
     eyebrow: "SOBRE",
     title: "Um pouco sobre mim",
     paragraphs: [
-      "Trabalho como desenvolvedora desde 2021. Comecei na Copynorte, onde criei sistemas do zero e liderei o desenvolvimento de projetos para o governo. Depois passei pela Ana Gaming e hoje estou na PGX.",
+      "Trabalho como desenvolvedora desde 2021. Comecei na Copynorte, onde criei sistemas do zero e liderei o desenvolvimento de projetos para o governo. Depois passei pela Ana Gaming e pela PGX, onde criei o backoffice e cuidei dos pagamentos e da segurança da Supernova Bet.",
       "Atuo do front-end à infraestrutura. No dia a dia isso inclui APIs com muito volume, integrações de pagamento, painéis administrativos, controle de acesso, servidores e deploy. Nas empresas por onde passei, acabei sendo a pessoa de confiança para código e decisões técnicas.",
     ],
     quote: "Quero ser a melhor no que faço, e para mim isso começa por entender o sistema inteiro.",
@@ -174,7 +174,7 @@ export const portfolio: Portfolio = {
         },
         {
           place: "Copynorte",
-          period: "2021 a maio de 2025",
+          period: "março de 2021 a maio de 2025",
           title: "Onde aprendi a programar de verdade",
           body: [
             "Meu primeiro emprego como programadora. Entrei sabendo Python e saí sabendo construir um sistema completo, do front-end ao servidor.",
@@ -185,28 +185,34 @@ export const portfolio: Portfolio = {
         },
         {
           place: "Ana Gaming",
+          period: "maio a novembro de 2025",
           title: "Mercado de jogos online",
           body: ["Da Copynorte fui para a Ana Gaming, onde comecei a trabalhar no mercado de jogos online."],
           links: [{ label: "meu desafio técnico de front-end", href: "/projetos/anagaming-desafio-frontend/" }],
         },
         {
           place: "PGX",
-          period: "hoje",
-          title: "Duas frentes",
-          body: ["Na PGX eu divido o meu tempo entre dois trabalhos."],
+          period: "novembro de 2025 a novembro de 2026",
+          title: "Supernova Bet",
+          body: [
+            "Na PGX trabalhei na Supernova Bet, uma plataforma de apostas com várias casas que rodou em produção em 2026. Criei o backoffice do zero e fui responsável por pagamentos, alarmes e segurança.",
+          ],
+          links: [{ label: "ver o projeto", href: "/projetos/supernova-bet/" }],
+        },
+        {
+          place: "Hoje",
+          title: "Meus projetos",
+          body: ["Hoje me dedico aos meus projetos e estou aberta a novas propostas."],
           branches: [
             {
-              title: "Supernova Bet",
-              body: "Uma plataforma de apostas com várias casas, que rodou em produção em 2026. Criei o backoffice do zero e fui responsável por pagamentos, alarmes e segurança.",
-              links: [{ label: "ver o projeto", href: "/projetos/supernova-bet/" }],
+              title: "kezz",
+              body: "Meu ecossistema de apps em Rust, todo integrado à minha IA.",
+              links: [{ label: "ver o projeto", href: "/projetos/kezz/" }],
             },
             {
-              title: "Meus projetos",
-              body: "O kezz, meu ecossistema de apps em Rust integrado à minha IA, e a Kezz Game Forge, minha engine de jogos 2D.",
-              links: [
-                { label: "kezz", href: "/projetos/kezz/" },
-                { label: "Kezz Game Forge", href: "/projetos/kezz-game-forge/" },
-              ],
+              title: "Kezz Game Forge",
+              body: "Minha engine de jogos 2D em Rust, com editor próprio.",
+              links: [{ label: "ver o projeto", href: "/projetos/kezz-game-forge/" }],
             },
           ],
         },
@@ -1323,7 +1329,7 @@ export const portfolio: Portfolio = {
   },
 
   footer: {
-    copyright: "© 2026 Karin Elizabeth Ramos",
+    copyright: "© 2026 Karin Elizabeth",
     signature: "karinzitta.dev // SEC_FIM",
   },
 };

@@ -43,8 +43,7 @@ export function personJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Karin Elizabeth Ramos",
-    alternateName: person,
+    name: person,
     url: site.url,
     image: `${site.url}${portfolio.profile.portrait.image ?? ""}`,
     jobTitle: "Desenvolvedora full-stack",
