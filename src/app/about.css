@@ -1,0 +1,300 @@
+/* Página /sobre e o roadmap */
+
+.about-more {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--pink);
+}
+.about-more:hover {
+  color: var(--pink-3);
+}
+
+.ab {
+  padding: 40px 0 0;
+}
+.ab-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 48px;
+  align-items: center;
+}
+.ab-title {
+  margin: 0 0 20px;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -1px;
+  background: linear-gradient(120deg, var(--pink), var(--pink-3) 50%, var(--magenta));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ab-lead {
+  max-width: 680px;
+  margin: 0 0 14px;
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: var(--muted);
+}
+.ab-photo {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 5 / 6;
+  background: linear-gradient(160deg, var(--surface-2), var(--surface));
+  box-shadow: 0 30px 80px -40px var(--glow);
+}
+.ab-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ab-facts {
+  margin-top: 40px;
+}
+.ab-sec {
+  margin-top: 64px;
+}
+.ab-principles {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.ab-cta {
+  margin-top: 72px;
+}
+.ab-cta .ctas {
+  margin-top: 4px;
+}
+
+/* roadmap */
+.rm {
+  --rm-x: 22px; /* centro da linha */
+  position: relative;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.rm::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 40px;
+  left: calc(var(--rm-x) - 1px);
+  width: 2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--pink), var(--magenta) 70%, rgba(192, 59, 255, 0.2));
+  transform-origin: top;
+}
+html.js .rm::before {
+  transform: scaleY(0);
+  transition: transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s;
+}
+html.js .rm.is-in::before {
+  transform: none;
+}
+.rm-step {
+  position: relative;
+  padding: 0 0 34px calc(var(--rm-x) * 2 + 18px);
+}
+.rm-step:last-child {
+  padding-bottom: 0;
+}
+.rm-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: calc(var(--rm-x) * 2);
+  height: calc(var(--rm-x) * 2);
+  border: 1px solid var(--pink);
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pink-3);
+  background: var(--bg);
+  box-shadow: 0 0 0 5px rgba(255, 61, 138, 0.1), 0 0 18px -2px var(--glow);
+}
+.rm-card {
+  border: 1px solid var(--line-soft);
+  border-radius: 16px;
+  padding: 20px 22px;
+  background: var(--surface);
+}
+.rm-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+.rm-meta b {
+  color: var(--pink);
+  font-weight: 700;
+}
+.rm-title {
+  margin: 8px 0 10px;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.rm-card p,
+.rm-branch p {
+  margin: 0 0 10px;
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.rm-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 4px;
+}
+.rm-links a {
+  font-size: 12.5px;
+  color: var(--pink);
+}
+.rm-links a:hover {
+  color: var(--pink-3);
+}
+
+/* antes do primeiro emprego: passos mais leves */
+.rm-step--compact {
+  padding-bottom: 20px;
+}
+.rm-step--compact .rm-dot {
+  transform: scale(0.82);
+  border-color: rgba(255, 61, 138, 0.55);
+  box-shadow: none;
+  color: var(--muted);
+}
+.rm-step--compact .rm-card {
+  border-style: dashed;
+  border-color: rgba(255, 77, 150, 0.22);
+  padding: 14px 18px;
+  background: transparent;
+}
+.rm-step--compact .rm-title {
+  margin: 6px 0 6px;
+  font-size: 16px;
+}
+.rm-step--compact .rm-card p {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.rm-step--compact .rm-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* a bifurcação: um tronco desce do card e abre em dois ramos */
+.rm-branches {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 0;
+  padding-top: 40px;
+}
+.rm-branches::before {
+  /* tronco */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  margin-left: -1px;
+  background: var(--magenta);
+}
+.rm-branches::after {
+  /* travessa */
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  background: var(--magenta);
+}
+.rm-branch {
+  position: relative;
+  border: 1px solid rgba(192, 59, 255, 0.35);
+  border-radius: 16px;
+  padding: 18px 20px;
+  background: linear-gradient(170deg, rgba(192, 59, 255, 0.07), var(--surface) 60%);
+}
+.rm-branch::before {
+  /* queda até cada ramo */
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  margin-left: -1px;
+  background: var(--magenta);
+}
+.rm-branch h4 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--pink-3);
+}
+
+@media (max-width: 920px) {
+  .ab-head {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+  .ab-photo {
+    order: -1;
+    max-width: 220px;
+  }
+  .ab-title {
+    font-size: 40px;
+  }
+  .ab-principles {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .rm {
+    --rm-x: 18px;
+  }
+  .rm-step {
+    padding-left: calc(var(--rm-x) * 2 + 12px);
+  }
+  .rm-branches {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 20px;
+  }
+  .rm-branches::before,
+  .rm-branches::after,
+  .rm-branch::before {
+    display: none;
+  }
+  .rm-branch {
+    border-left: 2px solid var(--magenta);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .rm::before {
+    transform: none;
+    transition: none;
+  }
+}
+
+.ab-pillar {
+  border-color: var(--line);
+  background: linear-gradient(170deg, var(--surface-2), var(--surface));
+}
+.ab-pillar-num {
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: var(--pink);
+}

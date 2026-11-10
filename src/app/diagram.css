@@ -1,0 +1,735 @@
+/* Mapas de arquitetura (kezz, supernova). Cada mapa define o próprio grid
+   e os vãos (--cg1 esquerda, --cg3 direita, --rg1 vertical); as setas usam
+   esses vãos pra saber o tamanho. */
+.dg-figure {
+  --zpad: 16px;
+  --ztop: 46px;
+  --c-data: #ff7ac0;
+  --c-login: #c879ff;
+  --c-ext: #8f81a0;
+  container: dg / inline-size;
+  margin: 0;
+}
+.dg-figure code {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  color: var(--pink-3);
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 0 3px;
+}
+.dg-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.dg-legend {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 0 var(--zpad) 16px;
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.dg-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.lg-data {
+  stroke: var(--c-data);
+  stroke-width: 2;
+}
+.lg-login {
+  stroke: var(--c-login);
+  stroke-width: 2;
+  stroke-dasharray: 6 4;
+}
+.lg-ext {
+  fill: none;
+  stroke: var(--c-ext);
+  stroke-dasharray: 4 3;
+}
+
+.dg-map {
+  display: grid;
+  padding: var(--ztop) var(--zpad) var(--zpad);
+}
+
+/* kezz */
+.kz {
+  --cg1: 88px;
+  --cg2: 32px;
+  --cg3: 72px;
+  --rg1: 72px;
+  --rg2: 100px;
+  --mcp-turn: 40px;
+}
+.kz-map {
+  grid-template-columns: 184px var(--cg1) 0.62fr var(--cg2) 1fr var(--cg3) 214px;
+  grid-template-rows: auto var(--rg1) auto var(--rg2) auto;
+}
+.dg-map > * {
+  min-width: 0;
+}
+
+/* zonas (fundos com rótulo) */
+.dg-zone {
+  position: relative;
+  z-index: 0;
+  margin: calc(-1 * var(--ztop)) calc(-1 * var(--zpad)) calc(-1 * var(--zpad));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.018);
+}
+.dg-zone.dashed {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.1);
+  background: transparent;
+}
+.dg-zone.warm {
+  border-color: rgba(243, 178, 74, 0.16);
+  background: rgba(243, 178, 74, 0.025);
+}
+.dg-zl {
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--pink-2);
+  white-space: nowrap;
+}
+.dg-zl small {
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted-2);
+}
+
+/* posição de cada peça no mapa */
+.kz-zone-dev {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+.kz-zone-cloud {
+  grid-column: 3 / 6;
+  grid-row: 1 / 4;
+}
+.kz-zone-ext {
+  grid-column: 7 / 8;
+  grid-row: 1 / 4;
+}
+.kz-zone-board {
+  grid-column: 1 / 6;
+  grid-row: 5 / 6;
+}
+.kz-dev {
+  grid-column: 1 / 2;
+  grid-row: 1 / 5; /* desce até o Kezz Board: é por aqui que o MCP passa */
+}
+.kz-core {
+  grid-column: 3 / 6;
+  grid-row: 1 / 2;
+}
+.kz-ext1 {
+  grid-column: 7 / 8;
+  grid-row: 1 / 2;
+  align-self: start;
+}
+.kz-lane {
+  position: relative;
+  grid-column: 3 / 4;
+  grid-row: 2 / 5;
+}
+.kz-sec {
+  grid-column: 5 / 6;
+  grid-row: 3 / 4;
+}
+.kz-ext2 {
+  grid-column: 7 / 8;
+  grid-row: 3 / 4;
+}
+.kz-cli {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+  justify-content: flex-end; /* embaixo, pra não cruzar com o MCP */
+}
+.kz-board {
+  grid-column: 3 / 6;
+  grid-row: 5 / 6;
+}
+.kz-login {
+  grid-column: 7 / 8;
+  grid-row: 5 / 6;
+}
+
+/* supernova */
+.sn {
+  --cg1: 72px;
+  --cg2: 22px;
+  --cg3: 96px;
+  --rg1: 70px;
+  --rg2: 100px;
+}
+.sn-map {
+  grid-template-columns: 172px var(--cg1) 1fr var(--cg2) 1fr var(--cg2) 1fr var(--cg3) 190px;
+  grid-template-rows: auto var(--rg1) auto var(--rg2) auto;
+}
+.sn-zone-cli {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+.sn-zone-api {
+  grid-column: 3 / 8;
+  grid-row: 1 / 4;
+}
+.sn-zone-ext {
+  grid-column: 9 / 10;
+  grid-row: 1 / 4;
+}
+.sn-zone-low {
+  grid-column: 3 / 6;
+  grid-row: 5 / 6;
+}
+.sn-cli {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.sn-core {
+  grid-column: 3 / 8;
+  grid-row: 1 / 2;
+}
+.sn-games {
+  grid-column: 9 / 10;
+  grid-row: 1 / 2;
+  align-self: start;
+}
+.sn-sec {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+.sn-alarm {
+  grid-column: 5 / 6;
+  grid-row: 3 / 4;
+}
+.sn-pay {
+  grid-column: 7 / 8;
+  grid-row: 3 / 4;
+}
+.sn-gw {
+  grid-column: 9 / 10;
+  grid-row: 3 / 4;
+  align-self: start;
+}
+.sn-lists {
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+  align-self: start;
+}
+.sn-alerts {
+  grid-column: 5 / 6;
+  grid-row: 5 / 6;
+  align-self: start;
+}
+.sn-mine {
+  grid-column: 7 / 10;
+  grid-row: 5 / 6;
+}
+
+/* printercollector */
+.pc {
+  --cg1: 84px;
+  --cg2: 22px;
+  --cg3: 84px;
+  --rg1: 70px;
+  --rg2: 100px;
+}
+.pc-map {
+  grid-template-columns: 230px var(--cg1) 1fr var(--cg2) 1fr var(--cg3) 240px;
+  grid-template-rows: auto var(--rg1) auto var(--rg2) auto;
+}
+.pc-zone-client {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+.pc-zone-server {
+  grid-column: 3 / 6;
+  grid-row: 1 / 4;
+}
+.pc-zone-out {
+  grid-column: 7 / 8;
+  grid-row: 1 / 2;
+}
+.pc-zone-data {
+  grid-column: 3 / 6;
+  grid-row: 5 / 6;
+}
+.pc-printers {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+.pc-agent {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+.pc-dash {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+.pc-tasker {
+  grid-column: 5 / 6;
+  grid-row: 1 / 2;
+}
+.pc-api {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+}
+.pc-admin {
+  grid-column: 5 / 6;
+  grid-row: 3 / 4;
+}
+.pc-out {
+  grid-column: 7 / 8;
+  grid-row: 1 / 2;
+  align-self: start;
+}
+.pc-db {
+  grid-column: 3 / 6;
+  grid-row: 5 / 6;
+}
+.pc-panel {
+  grid-column: 7 / 8;
+  grid-row: 3 / 6;
+  align-self: start;
+}
+
+/* caixas */
+.dg-stack {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dg-tail {
+  position: relative;
+  flex: 1;
+  min-height: 16px;
+  margin-top: -16px; /* começa colado no Kezz AI */
+}
+.dg-box {
+  --a: var(--pink);
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--line-soft);
+  border-radius: 13px;
+  padding: 13px 15px 14px 20px;
+  background: linear-gradient(180deg, var(--surface-2), var(--surface));
+}
+.dg-box::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: var(--a);
+}
+.dg-box.ext {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.11);
+  background: rgba(11, 6, 16, 0.4);
+}
+.dg-box.ext::before {
+  opacity: 0.55;
+}
+.dg-box h3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 9px;
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--at, var(--a));
+}
+.dg-box h3 small {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted-2);
+}
+.dg-box h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+}
+.dg-box.ext h4 {
+  color: #cdbfd5;
+}
+.dg-box > p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.dg-meta {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--muted-2);
+  overflow-wrap: anywhere;
+}
+.dg-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.dg-box li {
+  position: relative;
+  padding-left: 15px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.dg-box li::before {
+  content: "\203A";
+  position: absolute;
+  left: 0;
+  color: var(--a);
+}
+.dg-box li b {
+  font-weight: 600;
+  color: var(--ink);
+}
+.dg-wip {
+  align-self: center;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--eco-amber);
+  border: 1px solid rgba(243, 178, 74, 0.4);
+  border-radius: 999px;
+  padding: 2px 8px;
+  background: rgba(243, 178, 74, 0.1);
+}
+.a-magenta {
+  --a: var(--magenta);
+  --at: #d08bff;
+}
+.a-pink {
+  --a: var(--pink);
+  --at: var(--pink-2);
+}
+.a-teal {
+  --a: var(--eco-teal);
+  --at: var(--eco-teal);
+}
+.a-amber {
+  --a: var(--eco-amber);
+  --at: var(--eco-amber);
+}
+.a-muted {
+  --a: var(--muted-2);
+  --at: var(--muted);
+}
+
+/* painel "quem faz o login" */
+.dg-panel {
+  position: relative;
+  z-index: 1;
+  margin: calc(-1 * var(--ztop)) calc(-1 * var(--zpad)) calc(-1 * var(--zpad));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 15px 18px 10px;
+  background: rgba(23, 16, 31, 0.55);
+}
+.dg-panel .dg-zl {
+  position: static;
+  display: block;
+  margin-bottom: 8px;
+}
+.dg-lrow {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line-soft);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.dg-lrow b {
+  flex: none;
+  width: 92px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink);
+}
+.dg-dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--a);
+  transform: translateY(-1px);
+}
+
+/* setas */
+.dg-w {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+.dg-w > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.dg-w.h {
+  height: 14px;
+  margin-top: -7px;
+}
+.dg-w.v {
+  width: 14px;
+  margin-left: -7px;
+}
+.dg-w.r {
+  left: 100%;
+  top: 50%;
+  width: var(--cg1);
+}
+.dg-w.l {
+  right: 100%;
+  top: 50%;
+  width: var(--cg3);
+}
+.dg-w.up {
+  bottom: 100%;
+  height: var(--rg1);
+}
+.dg-w.up2 {
+  bottom: 100%;
+  height: var(--rg2);
+}
+.dg-w.lane {
+  top: 0;
+  bottom: 0;
+}
+/* MCP: Kezz AI → (corredor entre as zonas) → Kezz Board */
+.dg-w.mcp-a {
+  left: 100%;
+  top: -16px;
+  width: calc(var(--cg1) / 2);
+}
+.dg-w.mcp-b {
+  left: calc(100% + var(--cg1) / 2);
+  top: -16px;
+  bottom: 0;
+}
+.dg-w.mcp-c {
+  left: calc(var(--cg1) / -2 - 1px);
+  top: -1px;
+  height: calc(var(--mcp-turn) + 1px);
+}
+.dg-w.mcp-d {
+  left: calc(var(--cg1) / -2 - 1px);
+  top: var(--mcp-turn);
+  width: calc(var(--cg1) / 2 + 1px);
+}
+.dg-w.mcp-a line,
+.dg-w.mcp-b line,
+.dg-w.mcp-c line {
+  stroke-linecap: square;
+}
+.k-data line {
+  stroke: var(--c-data);
+  stroke-width: 1.8;
+}
+.k-login line {
+  stroke: var(--c-login);
+  stroke-width: 2;
+  stroke-dasharray: 6 5;
+}
+.k-ext line {
+  stroke: var(--c-ext);
+  stroke-width: 1.6;
+}
+.dg-wl {
+  position: absolute;
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--muted);
+  white-space: nowrap;
+  background: rgba(11, 6, 16, 0.88);
+}
+.dg-wl code {
+  padding: 0;
+  font-size: 1em;
+  background: none;
+}
+.k-login .dg-wl {
+  color: var(--c-login);
+}
+.dg-w.h .dg-wl {
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, -1px);
+}
+.dg-wl.right-hi {
+  left: calc(50% + 6px);
+  top: 30%;
+  transform: translateY(-50%);
+}
+.dg-wl.left-lo {
+  right: calc(50% + 6px);
+  top: 70%;
+  transform: translateY(-50%);
+}
+.dg-wl.left-mid {
+  right: calc(50% + 6px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* nota do login, embaixo do mapa */
+.dg-foot {
+  margin: 22px var(--zpad) 0;
+  border: 1px solid rgba(192, 59, 255, 0.22);
+  border-left: 2px solid var(--magenta);
+  border-radius: 0 12px 12px 0;
+  padding: 14px 18px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--muted);
+  background: rgba(192, 59, 255, 0.05);
+}
+.dg-foot b {
+  font-weight: 600;
+  color: #d7b4ff;
+}
+
+/* o mapa precisa de ~1000px; num container menor vira uma lista */
+@container dg (max-width: 999px) {
+  .dg-legend,
+  .dg-zone,
+  .dg-w,
+  .dg-tail,
+  .kz-lane,
+  .dg-hide-sm {
+    display: none;
+  }
+  .dg-map {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0;
+  }
+  .kz-core {
+    order: 1;
+  }
+  .kz-dev {
+    order: 2;
+  }
+  .kz-sec {
+    order: 3;
+  }
+  .kz-board {
+    order: 4;
+  }
+  .kz-ext1 {
+    order: 5;
+  }
+  .kz-ext2 {
+    order: 6;
+    gap: 14px;
+  }
+  .dg-panel {
+    order: 7;
+    margin: 0;
+  }
+  .dg-foot {
+    margin: 16px 0 0;
+  }
+  .sn-core {
+    order: 1;
+  }
+  .sn-cli {
+    order: 2;
+  }
+  .sn-pay {
+    order: 3;
+  }
+  .sn-gw {
+    order: 4;
+  }
+  .sn-alarm {
+    order: 5;
+  }
+  .sn-alerts {
+    order: 6;
+  }
+  .sn-sec {
+    order: 7;
+  }
+  .sn-lists {
+    order: 8;
+  }
+  .sn-mine {
+    order: 9;
+  }
+  .pc-printers,
+  .pc-out,
+  .pc-panel {
+    align-self: stretch;
+  }
+  .pc-printers {
+    order: 1;
+  }
+  .pc-agent {
+    order: 2;
+  }
+  .pc-api {
+    order: 3;
+  }
+  .pc-db {
+    order: 4;
+  }
+  .pc-tasker {
+    order: 5;
+  }
+  .pc-out {
+    order: 6;
+    gap: 14px;
+  }
+  .pc-dash {
+    order: 7;
+  }
+  .pc-admin {
+    order: 8;
+  }
+  .pc-panel {
+    order: 9;
+  }
+}

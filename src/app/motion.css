@@ -1,0 +1,241 @@
+/* Entradas que rodam quando o Motion.tsx coloca `is-in`. Só esconde com
+   html.js, nunca com motion-off, e nada disso vale pra quem pediu menos
+   movimento. Os keyframes saem do estado escondido e voltam pro estilo do
+   elemento, então o hover continua funcionando depois. */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* esperando pra entrar */
+  html.js:not(.motion-off)
+    :is(
+      [data-reveal],
+      .hero .portrait,
+      .contact,
+      .footer,
+      .pj-back,
+      .pj-h2,
+      .pj-note,
+      .pj-shot-cap,
+      .pj-sec > .pj-desc,
+      .morelabel,
+      .pj-gallery-label,
+      .pj-row-media,
+      .pj-row-text,
+      .zoom-card
+    ):not(.is-in),
+  html.js:not(.motion-off)
+    :is(
+      [data-reveal-stagger],
+      .hero > div:not(.portrait),
+      .cards,
+      .metrics,
+      .blk,
+      .skillgrid,
+      .pj-features,
+      .projgrid,
+      .pj-head,
+      .pj-metrics,
+      .pj-hl-grid,
+      .pj-gallery,
+      .pj-end
+    ):not(.is-in)
+    > * {
+    opacity: 0;
+  }
+
+  html.js:not(.motion-off) [data-reveal].is-in,
+  html.js:not(.motion-off) [data-reveal-stagger].is-in > * {
+    animation: rv-up 0.55s var(--rv-ease) both;
+    animation-fill-mode: backwards;
+    animation-delay: calc(var(--i, 0) * 65ms);
+  }
+  html.js:not(.motion-off) [data-reveal="scale"].is-in {
+    animation-name: rv-scale;
+  }
+
+  /* imagens: abrem de cima pra baixo, com uma linha passando na borda */
+  html.js:not(.motion-off) [data-reveal="wipe"].is-in {
+    animation: rv-wipe 0.7s var(--rv-ease) backwards;
+    animation-delay: calc(var(--i, 0) * 65ms);
+  }
+  html.js:not(.motion-off) [data-reveal="wipe"].is-in .zoom-body {
+    animation: rv-focus 0.8s var(--rv-ease) backwards;
+    animation-delay: calc(var(--i, 0) * 65ms);
+  }
+  html.js:not(.motion-off) [data-reveal="wipe"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 2px;
+    z-index: 3;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(90deg, transparent, var(--pink-2) 30%, #fff 50%, var(--pink-2) 70%, transparent);
+    box-shadow: 0 0 16px 3px rgba(255, 61, 138, 0.6);
+  }
+  html.js:not(.motion-off) [data-reveal="wipe"].is-in::after {
+    animation: rv-scan 0.7s var(--rv-ease);
+    animation-delay: calc(var(--i, 0) * 65ms);
+  }
+
+  /* mapas: zonas, caixas uma a uma, setas desenhadas a partir da origem */
+  html.js:not(.motion-off)
+    .dg-figure:not(.is-in)
+    :is(.dg-zone, .dg-box, .dg-panel, .dg-legend, .dg-foot, .dg-w) {
+    opacity: 0;
+  }
+  html.js:not(.motion-off) .dg-figure.is-in :is(.dg-legend, .dg-foot) {
+    animation: rv-up 0.45s var(--rv-ease) backwards;
+    animation-delay: var(--d, 0ms);
+  }
+  html.js:not(.motion-off) .dg-figure.is-in .dg-zone {
+    animation: rv-zone 0.45s var(--rv-ease) backwards;
+    animation-delay: var(--d, 0ms);
+  }
+  html.js:not(.motion-off) .dg-figure.is-in :is(.dg-box, .dg-panel) {
+    animation: rv-box 0.45s var(--rv-ease) backwards;
+    animation-delay: var(--d, 0ms);
+  }
+  html.js:not(.motion-off) .dg-figure .dg-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(105deg, transparent 35%, rgba(255, 122, 192, 0.32) 50%, transparent 65%) 0 0 / 260% 100%
+      no-repeat;
+  }
+  html.js:not(.motion-off) .dg-figure.is-in .dg-box::after {
+    animation: rv-sweep 0.6s var(--rv-ease);
+    animation-delay: calc(var(--d, 0ms) + 80ms);
+  }
+  html.js:not(.motion-off) .dg-figure.is-in .dg-w > svg {
+    animation: rv-draw 0.34s var(--rv-ease) backwards;
+    animation-delay: var(--d, 0ms);
+  }
+  html.js:not(.motion-off) .dg-figure.is-in .dg-wl {
+    animation: rv-fade 0.3s var(--rv-ease) backwards;
+    animation-delay: calc(var(--d, 0ms) + 180ms);
+  }
+  .dg-w {
+    --draw-from: inset(-14px 100% -14px -14px);
+  }
+  .dg-w[data-draw="rtl"] {
+    --draw-from: inset(-14px -14px -14px 100%);
+  }
+  .dg-w[data-draw="ttb"] {
+    --draw-from: inset(-14px -14px 100% -14px);
+  }
+  .dg-w[data-draw="btt"] {
+    --draw-from: inset(100% -14px -14px -14px);
+  }
+}
+
+/* de lado só onde cabe; no celular tudo sobe */
+@media (prefers-reduced-motion: no-preference) and (min-width: 921px) {
+  html.js:not(.motion-off) [data-reveal="left"].is-in {
+    animation-name: rv-left;
+  }
+  html.js:not(.motion-off) [data-reveal="right"].is-in {
+    animation-name: rv-right;
+  }
+}
+
+:root {
+  --rv-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes rv-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    filter: blur(6px);
+  }
+}
+@keyframes rv-left {
+  from {
+    opacity: 0;
+    transform: translate3d(-28px, 0, 0);
+    filter: blur(6px);
+  }
+}
+@keyframes rv-right {
+  from {
+    opacity: 0;
+    transform: translate3d(28px, 0, 0);
+    filter: blur(6px);
+  }
+}
+@keyframes rv-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: blur(6px);
+  }
+}
+@keyframes rv-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes rv-wipe {
+  from {
+    opacity: 0.35;
+    clip-path: inset(0 0 100% 0 round 16px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(-140px -140px -140px -140px round 16px);
+  }
+}
+@keyframes rv-focus {
+  from {
+    filter: blur(8px) saturate(1.5) brightness(1.15);
+  }
+}
+@keyframes rv-scan {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+@keyframes rv-zone {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+}
+@keyframes rv-box {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+    filter: blur(4px);
+  }
+}
+@keyframes rv-sweep {
+  from {
+    opacity: 1;
+    background-position: 100% 0;
+  }
+  to {
+    opacity: 0;
+    background-position: 0 0;
+  }
+}
+@keyframes rv-draw {
+  from {
+    clip-path: var(--draw-from);
+  }
+  to {
+    clip-path: inset(-14px);
+  }
+}
