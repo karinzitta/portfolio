@@ -1,6 +1,3 @@
-/* Mapas de arquitetura (kezz, supernova). Cada mapa define o próprio grid
-   e os vãos (--cg1 esquerda, --cg3 direita, --rg1 vertical); as setas usam
-   esses vãos pra saber o tamanho. */
 .dg-figure {
   --zpad: 16px;
   --ztop: 46px;
@@ -75,7 +72,7 @@
   min-width: 0;
 }
 
-/* zonas (fundos com rótulo) */
+/* zonas */
 .dg-zone {
   position: relative;
   z-index: 0;
@@ -112,7 +109,7 @@
   color: var(--muted-2);
 }
 
-/* posição de cada peça no mapa */
+/* posições */
 .kz-zone-dev {
   grid-column: 1 / 2;
   grid-row: 1 / 4;
@@ -131,7 +128,7 @@
 }
 .kz-dev {
   grid-column: 1 / 2;
-  grid-row: 1 / 5; /* desce até o Kezz Board: é por aqui que o MCP passa */
+  grid-row: 1 / 5;
 }
 .kz-core {
   grid-column: 3 / 6;
@@ -158,7 +155,7 @@
 .kz-cli {
   grid-column: 1 / 2;
   grid-row: 5 / 6;
-  justify-content: flex-end; /* embaixo, pra não cruzar com o MCP */
+  justify-content: flex-end;
 }
 .kz-board {
   grid-column: 3 / 6;
@@ -321,7 +318,7 @@
   position: relative;
   flex: 1;
   min-height: 16px;
-  margin-top: -16px; /* começa colado no Kezz AI */
+  margin-top: -16px;
 }
 .dg-box {
   --a: var(--pink);
@@ -451,7 +448,7 @@
   --at: var(--muted);
 }
 
-/* painel "quem faz o login" */
+/* painel de login */
 .dg-panel {
   position: relative;
   z-index: 1;
@@ -534,7 +531,7 @@
   top: 0;
   bottom: 0;
 }
-/* MCP: Kezz AI → (corredor entre as zonas) → Kezz Board */
+/* mcp */
 .dg-w.mcp-a {
   left: 100%;
   top: -16px;
@@ -613,7 +610,7 @@
   transform: translateY(-50%);
 }
 
-/* nota do login, embaixo do mapa */
+/* nota */
 .dg-foot {
   margin: 22px var(--zpad) 0;
   border: 1px solid rgba(192, 59, 255, 0.22);
@@ -630,7 +627,7 @@
   color: #d7b4ff;
 }
 
-/* o mapa precisa de ~1000px; num container menor vira uma lista */
+/* mobile */
 @container dg (max-width: 999px) {
   .dg-legend,
   .dg-zone,

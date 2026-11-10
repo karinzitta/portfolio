@@ -31,8 +31,6 @@ function Dots() {
   );
 }
 
-// Card com barra de janela. Hover mostra a lupa; clique abre um modal grande
-// com `full`. `thumb` e `full` chegam prontos (mapa escalado, imagem...).
 export function ZoomCard({
   text,
   thumb,
@@ -44,7 +42,6 @@ export function ZoomCard({
   thumb: ReactNode;
   full: ReactNode;
   bodyClass?: string;
-  /** window: barra de janela em cima. phone: moldura de telefone, sem barra. */
   frame?: "window" | "phone";
 }) {
   const [open, setOpen] = useState(false);
@@ -58,7 +55,6 @@ export function ZoomCard({
     const root = document.documentElement;
     const trigger = triggerRef.current;
     const prev = { overflow: root.style.overflow, paddingRight: root.style.paddingRight };
-    // trava a rolagem sem a página pular quando a barra de rolagem some
     const gutter = window.innerWidth - root.clientWidth;
     root.style.overflow = "hidden";
     if (gutter > 0) root.style.paddingRight = `${gutter}px`;

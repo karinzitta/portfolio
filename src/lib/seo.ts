@@ -4,7 +4,6 @@ import { portfolio } from "@/data/portfolio";
 const { site } = portfolio;
 const person = portfolio.profile.portrait.captionName;
 
-// Metadata de uma página: título, descrição, endereço canônico e imagem de compartilhamento.
 export function pageMeta({
   title,
   description,
@@ -40,7 +39,6 @@ export function pageMeta({
   };
 }
 
-// Dados estruturados (schema.org) da pessoa, pra busca entender quem é a dona do site.
 export function personJsonLd() {
   return {
     "@context": "https://schema.org",

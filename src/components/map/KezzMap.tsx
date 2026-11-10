@@ -1,7 +1,6 @@
 import type { KezzMapData } from "@/types/portfolio";
 import { Box, Legend, Markers, Panel, Wire, Zone, rich } from "./kit";
 
-// Os apps do kezz e como eles se conectam.
 export function KezzMap({ data, ids }: { data: KezzMapData; ids: string }) {
   const { zones, wires } = data;
   return (
@@ -22,7 +21,6 @@ export function KezzMap({ data, ids }: { data: KezzMapData; ids: string }) {
           <Box box={data.devices.kezzAi} accent="pink">
             <Wire ids={ids} pos="r" both label={wires.kezzAi} />
           </Box>
-          {/* o MCP sai do Kezz AI e desce pelo vão até o Kezz Board */}
           <div className="dg-tail" aria-hidden>
             <Wire ids={ids} pos="mcp-a" arrow={false} />
             <Wire ids={ids} pos="mcp-b" arrow={false} />

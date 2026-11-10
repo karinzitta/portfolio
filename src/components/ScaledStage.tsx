@@ -6,10 +6,6 @@ const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayout
 
 type Measure = { w: number; h: number; nh: number };
 
-// Desenha o conteúdo numa largura fixa (`design`) e escala pra caber.
-// thumb: escala pela largura, a altura acompanha.
-// fit: cabe na largura e, se der, na altura, sem ficar menor que minScale.
-//      Abaixo de minMap de largura não escala; o mapa vira lista pelo CSS.
 export function ScaledStage({
   children,
   design,
@@ -22,7 +18,6 @@ export function ScaledStage({
   children: ReactNode;
   design: number;
   mode: "thumb" | "fit";
-  /** Proporção usada antes de medir, ex: "1240 / 820". */
   ratio?: string;
   minMap?: number;
   minScale?: number;

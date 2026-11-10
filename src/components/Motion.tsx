@@ -2,12 +2,6 @@
 
 import { useEffect } from "react";
 
-// Animações de entrada. O elemento ganha `is-in` quando aparece na tela e o
-// motion.css faz o resto. No markup:
-//   data-reveal ("up" por padrão, ou "left" | "right" | "scale")
-//   data-reveal-stagger: os filhos diretos entram um depois do outro
-// Os seletores abaixo já entram sozinhos, sem precisar de atributo.
-
 const SINGLE: [string, string][] = [
   [".hero .portrait", "scale"],
   [".contact", "up"],
@@ -37,7 +31,7 @@ const STAGGER = [
   ".pj-end",
 ].join(",");
 
-const STEP = 84; // ms entre um filho e o próximo
+const STEP = 84;
 const MAX_STEPS = 12;
 
 declare global {
@@ -55,7 +49,6 @@ function tagAuto(root: ParentNode) {
   root.querySelectorAll<HTMLElement>(STAGGER).forEach((el) => {
     if (!el.hasAttribute("data-reveal-stagger")) el.setAttribute("data-reveal-stagger", "");
   });
-  // zigue-zague: a imagem vem do lado dela e o texto do outro
   root.querySelectorAll<HTMLElement>(".pj-row").forEach((row) => {
     const even = Array.prototype.indexOf.call(row.parentElement?.children ?? [], row) % 2 === 1;
     const media = row.querySelector<HTMLElement>(":scope > .pj-row-media");
@@ -74,9 +67,7 @@ function prepareStagger(el: HTMLElement) {
   });
 }
 
-// Mapas: zonas, depois as caixas uma a uma, cada seta logo depois da caixa
-// dela, e por fim o painel e a nota. Uns 1,3s no total.
-const PACE = 1.3; // tudo um pouco mais calmo
+const PACE = 1.3;
 
 function prepareMap(fig: HTMLElement) {
   const set = (el: Element, ms: number) => (el as HTMLElement).style.setProperty("--d", `${Math.round(ms * PACE)}ms`);

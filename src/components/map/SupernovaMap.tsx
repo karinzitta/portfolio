@@ -1,7 +1,6 @@
 import type { SupernovaMapData } from "@/types/portfolio";
 import { Box, Legend, Markers, Panel, Wire, Zone, rich } from "./kit";
 
-// Visão geral da plataforma. Cinza = contexto; colorido = as partes que foram minhas.
 export function SupernovaMap({ data, ids }: { data: SupernovaMapData; ids: string }) {
   const { zones, wires, externals } = data;
   return (

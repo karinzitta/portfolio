@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { RoadmapStep } from "@/types/portfolio";
 
-// Linha do tempo vertical. O último passo pode se dividir em ramos.
 export function Roadmap({ steps }: { steps: RoadmapStep[] }) {
   return (
     <ol className="rm" data-reveal>

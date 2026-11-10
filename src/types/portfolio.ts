@@ -1,5 +1,3 @@
-// Formato do conteúdo. Os textos ficam em src/data/portfolio.ts.
-
 export type NavLink = { label: string; href: string };
 
 export type Status = { label: string; detail: string };
@@ -16,12 +14,10 @@ export type FocusCard = {
 export type Stat = { value: string; label: string };
 
 export type Portrait = {
-  /** Aparece no lugar da foto se não tiver imagem. */
   initials: string;
   captionName: string;
   captionRole: string;
   tag: string;
-  /** Caminho em /public, ex: "/me.png". */
   image?: string;
 };
 
@@ -51,11 +47,8 @@ export type About = {
   paragraphs: string[];
   quote: string;
   principles: Principle[];
-  /** Link pra página Sobre. */
   more?: Cta;
 };
-
-// ---- página /sobre ----
 
 export type RoadmapLink = { label: string; href: string };
 
@@ -63,14 +56,11 @@ export type RoadmapBranch = { title: string; body: string; links?: RoadmapLink[]
 
 export type RoadmapStep = {
   place: string;
-  /** Ex: "2021 · mai 2025". */
   period?: string;
   title: string;
   body: string[];
   links?: RoadmapLink[];
-  /** Passo menor, sem tanto destaque (os anos antes do primeiro emprego). */
   compact?: boolean;
-  /** Onde o caminho se divide. */
   branches?: RoadmapBranch[];
 };
 
@@ -80,12 +70,10 @@ export type AboutPage = {
   title: string;
   lead: string[];
   facts: Stat[];
-  /** Título da seção com os três pilares (os focusCards da home). */
   pillarsTitle: string;
   how: { title: string; paragraphs: string[] };
   roadmap: { title: string; note?: string; steps: RoadmapStep[] };
   study: { title: string; paragraphs: string[] };
-  /** Título da seção com os princípios da home. */
   principlesTitle: string;
   cta: { title: string; body: string; primary: Cta; secondary: Cta };
 };
@@ -99,22 +87,14 @@ export type Skills = {
   groups: SkillGroup[];
 };
 
-// ---- mapas de arquitetura ----
-
 export type MapAccent = "magenta" | "pink" | "teal" | "amber";
 
-/** Caixa de um mapa. Nos textos, `crase` vira código e **asteriscos** viram negrito. */
 export type MapBox = {
   name: string;
-  /** Ao lado do nome, ex: "(o kezz)". */
   aside?: string;
-  /** Host · stack, em fonte mono. */
   meta?: string;
-  /** Descrição curta (caixas pequenas). */
   text?: string;
-  /** Lista de pontos (caixas grandes). */
   points?: string[];
-  /** Selo, ex: "em andamento". */
   wip?: string;
 };
 
@@ -153,21 +133,15 @@ export type KezzMapData = {
   foot: MapFoot;
 };
 
-// ---- card com zoom (mapas e prints) ----
-
 export type ZoomText = {
-  /** Texto da barra da janela, ex: "~/kezz/infra/mapa". */
   path: string;
-  /** Título do modal. */
   title: string;
   hint: string;
-  /** Rótulo do botão que abre (leitor de tela). */
   open: string;
   esc: string;
   close: string;
 };
 
-// Mapa da Supernova: a plataforma em cinza e, coloridas, as partes que foram minhas.
 export type SupernovaMapData = {
   legend: MapLegend;
   zones: {
@@ -198,7 +172,6 @@ export type SupernovaMapData = {
   foot: MapFoot;
 };
 
-// Mapa do PrinterCollector: da impressora no cliente até o relatório.
 export type PrinterMapData = {
   legend: MapLegend;
   zones: {
@@ -229,30 +202,23 @@ export type ProjectVisual =
   | { kind: "printer-map"; zoom: ZoomText; caption: string; data: PrinterMapData };
 
 export type Shot = {
-  /** Caminho em /public. */
   src: string;
   alt: string;
-  /** Vai na barra da janela e no título do modal. */
   label: string;
   caption?: string;
-  /** Proporção da imagem, ex: "16 / 10". */
   ratio?: string;
-  /** Print de celular aparece numa moldura de telefone. */
   device?: "desktop" | "mobile";
 };
 
-/** Um print comentado, nas linhas em zigue-zague da página. */
 export type ShowcaseItem = {
   eyebrow?: string;
   title: string;
   body: string;
   points?: string[];
   shot: Shot;
-  /** Print de celular encaixado no canto do print principal. */
   phone?: Shot;
 };
 
-/** Textos dos cards com zoom de prints (galeria e zigue-zague). */
 export type ShotText = { hint: string; open: string; esc: string; close: string };
 
 export type Highlight = {
@@ -260,7 +226,6 @@ export type Highlight = {
   body: string;
   points?: string[];
   tags?: string[];
-  /** Ocupa a linha inteira, com os pontos em duas colunas. */
   wide?: boolean;
 };
 
@@ -269,28 +234,22 @@ export type ProjectLink = { label: string; href: string };
 export type Project = {
   slug: string;
   name: string;
-  /** Imagem de compartilhamento da página, em /public. */
   ogImage?: string;
-  /** Destaque na home (card grande). */
   featured?: boolean;
   badge: string;
   tagline: string;
-  /** Texto do card na home. */
   summary: string;
   tags: string[];
   metrics?: Stat[];
   period?: string;
   role?: string;
   stack?: string[];
-  /** Parágrafos do topo da página do projeto. */
   intro: string[];
   links?: ProjectLink[];
   visual?: ProjectVisual;
   highlights?: { title: string; items: Highlight[] };
-  /** Os prints principais, comentados. */
   showcase?: { title: string; note?: string; items: ShowcaseItem[] };
   notes?: { title: string; paragraphs: string[] }[];
-  /** Todos os prints, no fim da página. */
   gallery?: { title: string; desktopLabel: string; mobileLabel: string; items: Shot[] };
 };
 
@@ -305,7 +264,6 @@ export type ProjectsUi = {
   ctaTitle: string;
   ctaBody: string;
   ctaButton: string;
-  /** Textos dos cards de print. */
   shots: ShotText;
 };
 
@@ -342,9 +300,7 @@ export type SiteMeta = {
   title: string;
   description: string;
   lang: string;
-  /** Endereço público, sem barra no fim. */
   url: string;
-  /** Imagem de compartilhamento padrão, em /public. */
   ogImage: string;
   keywords: string[];
 };

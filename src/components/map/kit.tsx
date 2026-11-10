@@ -12,7 +12,6 @@ const COLORS: [WireKind, string][] = [
 ];
 const VERTICAL: WirePos[] = ["up", "up2", "lane", "mcp-b", "mcp-c"];
 
-// `crase` -> <code>, **asteriscos** -> <b>
 export function rich(text: string): ReactNode {
   return text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g).map((part, i) => {
     if (part.length > 2 && part.startsWith("`") && part.endsWith("`")) {
@@ -25,8 +24,6 @@ export function rich(text: string): ReactNode {
   });
 }
 
-// Pontas de seta. O mapa aparece mais de uma vez na página (miniatura e modal),
-// por isso os ids levam um prefixo por instância.
 export function Markers({ ids }: { ids: string }) {
   return (
     <svg className="dg-defs" width="0" height="0" aria-hidden focusable="false">
@@ -91,8 +88,6 @@ export function Legend({ legend }: { legend: MapLegend }) {
   );
 }
 
-// Um trecho de seta. A posição vem do CSS (.dg-w.r, .dg-w.up, ...): ela fica
-// presa ao elemento onde foi colocada e atravessa o vão até o vizinho.
 export function Wire({
   ids,
   pos,

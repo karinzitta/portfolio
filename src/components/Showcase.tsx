@@ -4,7 +4,6 @@ import { rich } from "./map/kit";
 
 type ShowcaseData = NonNullable<Project["showcase"]>;
 
-// Prints principais em zigue-zague: imagem | texto, texto | imagem...
 export function Showcase({ data, text }: { data: ShowcaseData; text: ShotText }) {
   return (
     <div className="pj-showcase">

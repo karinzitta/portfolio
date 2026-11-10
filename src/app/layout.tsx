@@ -9,7 +9,6 @@ import "./projects.css";
 import "./about.css";
 import "./motion.css";
 
-// Só esconde o que vai animar quando tem JS; se o Motion não subir, mostra tudo.
 const motionBoot =
   "document.documentElement.classList.add('js');setTimeout(function(){if(!window.__motion)document.documentElement.classList.add('motion-off')},3500)";
 

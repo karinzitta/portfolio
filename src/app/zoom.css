@@ -1,4 +1,3 @@
-/* Card com lupa que abre um modal grande. Usado nos mapas e nos prints. */
 .zoom-card {
   position: relative;
   border: 1px solid var(--line);
@@ -104,7 +103,7 @@
   opacity: 1;
   transform: scale(1);
 }
-/* no toque não existe hover: a lupa fica sempre visível, no canto */
+/* touch */
 @media (hover: none) {
   .zoom-btn {
     place-items: end;
@@ -119,8 +118,6 @@
 }
 
 .stage {
-  /* largura fixa: senão o aspect-ratio passa a calcular a largura a partir
-     da altura que o JS define, e a miniatura encolhe em loop */
   width: 100%;
 }
 .stage-sizer {
@@ -131,7 +128,7 @@
   transform-origin: 0 0;
 }
 .stage--thumb {
-  aspect-ratio: var(--stage-ratio, 1240 / 820); /* reserva o espaço até medir */
+  aspect-ratio: var(--stage-ratio, 1240 / 820);
   overflow: hidden;
 }
 .stage--thumb .stage-sizer {
@@ -266,7 +263,7 @@
   }
 }
 
-/* moldura de telefone pros prints de celular */
+/* moldura de celular */
 .zoom-card--phone {
   border: 5px solid #241a2e;
   border-radius: 30px;

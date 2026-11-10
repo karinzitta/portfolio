@@ -11,7 +11,6 @@ export function CopyEmail({ email }: { email: string }) {
       setCopied(true);
       setTimeout(() => setCopied(false), 1800);
     } catch {
-      // clipboard pode falhar (http, permissão): cai no mailto
       window.location.href = `mailto:${email}`;
     }
   }

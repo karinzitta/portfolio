@@ -17,7 +17,7 @@
   --pink-3: #ff9ecd;
   --magenta: #c03bff;
   --glow: rgba(255, 61, 138, 0.35);
-  /* acentos do diagrama do ecossistema kezz */
+  /* diagrama */
   --eco-teal: #35d0b4;
   --eco-amber: #f3b24a;
   --mono: var(--font-mono), "JetBrains Mono", monospace;
@@ -741,7 +741,6 @@ a.projcard:hover {
   .status .detail {
     display: none;
   }
-  /* o e-mail inteiro + "copiar" não cabe em 390px: deixa quebrar a linha */
   .contact {
     padding: 40px 20px;
   }

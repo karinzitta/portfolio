@@ -1,7 +1,6 @@
 import type { PrinterMapData } from "@/types/portfolio";
 import { Box, Legend, Markers, Panel, Wire, Zone, rich } from "./kit";
 
-// Da impressora na rede do cliente até o relatório.
 export function PrinterMap({ data, ids }: { data: PrinterMapData; ids: string }) {
   const { zones, wires } = data;
   return (

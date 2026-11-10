@@ -5,7 +5,6 @@ import { KezzMap } from "./map/KezzMap";
 import { SupernovaMap } from "./map/SupernovaMap";
 import { PrinterMap } from "./map/PrinterMap";
 
-// largura em que os mapas são desenhados antes de escalar
 const DESIGN = 1240;
 const RATIO = "1240 / 820";
 
@@ -42,7 +41,6 @@ export function ProjectVisual({ visual, slug }: { visual: Visual; slug: string }
   );
 }
 
-// Miniatura sem interação, pros cards da home.
 export function MapThumb({ visual, slug }: { visual: Visual; slug: string }) {
   return (
     <ScaledStage design={DESIGN} mode="thumb" ratio={RATIO}>

@@ -1,10 +1,4 @@
-/* Entradas que rodam quando o Motion.tsx coloca `is-in`. Só esconde com
-   html.js, nunca com motion-off, e nada disso vale pra quem pediu menos
-   movimento. Os keyframes saem do estado escondido e voltam pro estilo do
-   elemento, então o hover continua funcionando depois. */
-
 @media (prefers-reduced-motion: no-preference) {
-  /* esperando pra entrar */
   html.js:not(.motion-off)
     :is(
       [data-reveal],
@@ -52,7 +46,7 @@
     animation-name: rv-scale;
   }
 
-  /* imagens: abrem de cima pra baixo, com uma linha passando na borda */
+  /* imagens */
   html.js:not(.motion-off) [data-reveal="wipe"].is-in {
     animation: rv-wipe 0.91s var(--rv-ease) backwards;
     animation-delay: calc(var(--i, 0) * 84ms);
@@ -79,7 +73,7 @@
     animation-delay: calc(var(--i, 0) * 84ms);
   }
 
-  /* mapas: zonas, caixas uma a uma, setas desenhadas a partir da origem */
+  /* mapas */
   html.js:not(.motion-off)
     .dg-figure:not(.is-in)
     :is(.dg-zone, .dg-box, .dg-panel, .dg-legend, .dg-foot, .dg-w) {
@@ -133,7 +127,7 @@
   }
 }
 
-/* de lado só onde cabe; no celular tudo sobe */
+/* mobile */
 @media (prefers-reduced-motion: no-preference) and (min-width: 921px) {
   html.js:not(.motion-off) [data-reveal="left"].is-in {
     animation-name: rv-left;

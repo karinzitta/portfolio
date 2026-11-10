@@ -1,7 +1,6 @@
 import type { Shot, ShotText } from "@/types/portfolio";
 import { ZoomCard } from "./ZoomCard";
 
-// Um print com zoom. Desktop vai numa janela; celular, numa moldura de telefone.
 export function ShotCard({ shot, text }: { shot: Shot; text: ShotText }) {
   const phone = shot.device === "mobile";
   return (
