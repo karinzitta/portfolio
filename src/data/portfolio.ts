@@ -1313,7 +1313,7 @@ export const portfolio: Portfolio = {
     headlineLead: "Vamos ",
     headlineHighlight: "conversar?",
     body: "Tem um projeto ou uma vaga em mente? Mande um e-mail e eu respondo.",
-    email: "hikarin.elizabeth@gmail.com",
+    email: "karin@karinzitta.dev",
     socials: [
       { platform: "github", label: "github.com/karinzitta", href: "https://github.com/karinzitta" },
       { platform: "linkedin", label: "in/karinzitta", href: "https://www.linkedin.com/in/karinzitta" },
