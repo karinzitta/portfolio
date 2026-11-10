@@ -7,6 +7,7 @@ export function Skills({ data }: { data: SkillsData }) {
       <SectionMarker marker={data.marker} />
       <div className="eyebrow2 mono">{data.eyebrow}</div>
       <h2 className="h2">{data.title}</h2>
+      {data.note ? <p className="skillnote">{data.note}</p> : null}
       <div className="skillgrid">
         {data.groups.map((group) => (
           <div className="skillcard" key={group.label}>

@@ -84,6 +84,7 @@ export type Skills = {
   marker: Marker;
   eyebrow: string;
   title: string;
+  note?: string;
   groups: SkillGroup[];
 };
 

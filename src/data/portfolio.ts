@@ -2,15 +2,15 @@ import type { Portfolio } from "@/types/portfolio";
 
 export const portfolio: Portfolio = {
   site: {
-    title: "Karin Elizabeth · Desenvolvedora full-stack",
+    title: "Karin Elizabeth · Engenheira de Software",
     description:
-      "Desenvolvedora full-stack com foco em performance, otimização e segurança. Trabalho do front-end à infraestrutura, com experiência em sistemas de alto volume, pagamentos e backoffice.",
+      "Engenheira de Software com foco em performance, otimização e segurança. Trabalho do front-end à infraestrutura, com experiência em sistemas de alto volume, pagamentos e backoffice.",
     lang: "pt-BR",
     url: "https://karinzitta.dev",
     ogImage: "/og/home.jpg",
     keywords: [
       "Karin Elizabeth",
-      "desenvolvedora full-stack",
+      "engenheira de software",
       "portfólio",
       "TypeScript",
       "Rust",
@@ -40,15 +40,15 @@ export const portfolio: Portfolio = {
     eyebrow: "● PORTFÓLIO · 2026",
     greeting: "Olá, eu sou",
     name: "KARIN ELIZABETH",
-    tagline: "Desenvolvedora full-stack // performance · otimização · segurança",
-    lead: "Sou desenvolvedora full-stack e construo sistemas que aguentam produção, do front-end à infraestrutura. Há 5 anos trabalho com sistemas de alto volume e pagamentos, e meu forte é deixar software mais rápido, mais barato de rodar e mais difícil de invadir.",
+    tagline: "Engenheira de Software // back-end · front-end · performance · segurança",
+    lead: "Sou engenheira de software e construo sistemas que aguentam produção, do front-end à infraestrutura. Há 5 anos trabalho com sistemas de alto volume e pagamentos, e meu forte é deixar software mais rápido, mais barato de rodar e mais difícil de invadir.",
     status: { label: "Online", detail: "Aberta a propostas" },
     primaryCta: { label: "Entre em contato", href: "#contato" },
     secondaryCta: { label: "Ver projetos", href: "#projetos" },
     portrait: {
       initials: "KE",
       captionName: "Karin Elizabeth",
-      captionRole: "// dev full-stack",
+      captionRole: "// engenheira de software",
       tag: "@karinzitta",
       image: "/me.webp",
     },
@@ -77,7 +77,7 @@ export const portfolio: Portfolio = {
     ],
     metrics: [
       { value: "5 anos", label: "de experiência profissional" },
-      { value: "3.500+", label: "commits só em 2026" },
+      { value: "3.500+", label: "commits só em 2026, sem merges" },
       { value: "3", label: "empresas e dezenas de projetos entregues" },
       { value: "12 países", label: "com pagamentos que eu integrei" },
     ],
@@ -88,7 +88,7 @@ export const portfolio: Portfolio = {
     eyebrow: "SOBRE",
     title: "Um pouco sobre mim",
     paragraphs: [
-      "Trabalho como desenvolvedora desde 2021. Comecei na Copynorte, onde criei sistemas do zero e liderei o desenvolvimento de projetos para o governo. Depois passei pela Ana Gaming e pela PGX, onde criei o backoffice e cuidei dos pagamentos e da segurança da Supernova Bet.",
+      "Trabalho como engenheira de software desde 2021. Comecei na Copynorte, onde criei sistemas do zero e liderei o desenvolvimento de projetos para o governo. Depois passei pela Ana Gaming e pela PGX, onde criei o backoffice e cuidei dos pagamentos e da segurança da Supernova Bet.",
       "Atuo do front-end à infraestrutura. No dia a dia isso inclui APIs com muito volume, integrações de pagamento, painéis administrativos, controle de acesso, servidores e deploy. Nas empresas por onde passei, acabei sendo a pessoa de confiança para código e decisões técnicas.",
     ],
     quote: "Quero ser a melhor no que faço, e para mim isso começa por entender o sistema inteiro.",
@@ -116,19 +116,19 @@ export const portfolio: Portfolio = {
     seo: {
       title: "Sobre mim",
       description:
-        "Minha trajetória como desenvolvedora full-stack, da Copynorte à PGX, as áreas em que sou mais forte e como eu trabalho.",
+        "Minha trajetória como engenheira de software, da Copynorte à PGX, as áreas em que sou mais forte e como eu trabalho.",
     },
     eyebrow: "SOBRE MIM",
     title: "Karin Elizabeth",
     lead: [
-      "Sou desenvolvedora full-stack e também cuido de infraestrutura. Aprendi a programar de verdade trabalhando em sistemas reais, em produção, e continuo aprendendo assim.",
+      "Sou engenheira de software e também cuido de infraestrutura. Aprendi a programar de verdade trabalhando em sistemas reais, em produção, e continuo aprendendo assim.",
       "Consigo construir praticamente qualquer tipo de aplicação, do front-end ao servidor, mas onde mais me aprofundei foi em performance, otimização e segurança. São as áreas em que um erro custa caro, e é nelas que eu mais gosto de trabalhar.",
     ],
     facts: [
-      { value: "2021", label: "primeiro emprego como desenvolvedora" },
+      { value: "2021", label: "primeiro emprego como engenheira de software" },
       { value: "11", label: "gateways de pagamento integrados" },
       { value: "2", label: "sistemas meus usados fora do Brasil" },
-      { value: "3.500+", label: "commits só em 2026" },
+      { value: "3.500+", label: "commits só em 2026, sem merges" },
     ],
     pillarsTitle: "Onde sou mais forte",
     how: {
@@ -188,7 +188,7 @@ export const portfolio: Portfolio = {
           period: "maio a novembro de 2025",
           title: "Mercado de jogos online",
           body: ["Da Copynorte fui para a Ana Gaming, onde comecei a trabalhar no mercado de jogos online."],
-          links: [{ label: "meu desafio técnico de front-end", href: "/projetos/anagaming-desafio-frontend/" }],
+          links: [{ label: "o desafio técnico que fiz para entrar", href: "/projetos/anagaming-desafio-frontend/" }],
         },
         {
           place: "PGX",
@@ -237,18 +237,19 @@ export const portfolio: Portfolio = {
     marker: { code: "//02.00 SEC_SKILLS", index: "[02 / 04]" },
     eyebrow: "STACK",
     title: "Tecnologias com que trabalho",
+    note: "O que uso no dia a dia. Já trabalhei também com Nuxt, Ruby on Rails, Java, C# / .NET e MongoDB, mas não coloco na lista o que não uso com frequência.",
     groups: [
       {
         label: "FRONT-END",
-        items: ["React", "Next.js", "Vue", "Nuxt", "TypeScript", "Sass"],
+        items: ["React", "Next.js", "Vue", "TypeScript", "Sass"],
       },
       {
         label: "BACK-END",
-        items: ["NestJS", "Rust", "Python", "Ruby on Rails", "Java", "C# / .NET"],
+        items: ["NestJS", "Rust", "Python"],
       },
       {
         label: "INFRA / DEVOPS",
-        items: ["Linux", "Docker", "Nginx", "AWS", "PostgreSQL", "Redis", "RabbitMQ", "MongoDB"],
+        items: ["Linux", "Docker", "Nginx", "AWS", "PostgreSQL", "Redis", "RabbitMQ"],
       },
     ],
   },
@@ -282,19 +283,19 @@ export const portfolio: Portfolio = {
         ogImage: "/og/supernova-bet.jpg",
         name: "Supernova Bet",
         featured: true,
-        badge: "PRODUÇÃO · 2026 · FORA DO AR",
+        badge: "PRODUÇÃO · 2026",
         tagline: "plataforma de apostas com várias casas // NestJS · Next.js · Postgres",
         summary:
           "Plataforma de apostas (casino e esportes) que rodou em produção em 2026. Criei o backoffice e fui responsável por pagamentos, alarmes e segurança.",
         tags: ["NestJS", "Next.js", "PostgreSQL", "AWS"],
         metrics: [
-          { value: "~62%", label: "do código do backoffice é meu" },
-          { value: "~57%", label: "do código do back-end é meu" },
+          { value: "~62%", label: "do backoffice é meu, por linhas no git" },
+          { value: "~57%", label: "do back-end é meu, por linhas no git" },
           { value: "11", label: "gateways de pagamento integrados" },
           { value: "153", label: "telas no backoffice" },
         ],
         period: "março a novembro de 2026",
-        role: "Desenvolvedora full-stack. Criei o backoffice e fui responsável por pagamentos, alarmes e segurança.",
+        role: "Engenheira de Software. Criei o backoffice e fui responsável por pagamentos, alarmes e segurança.",
         stack: [
           "NestJS",
           "TypeScript",
@@ -1282,12 +1283,19 @@ export const portfolio: Portfolio = {
       },
       {
         slug: "anagaming-desafio-frontend",
-        name: "anagaming-desafio-frontend",
-        badge: "DESAFIO TÉCNICO",
-        tagline: "front-end // TypeScript · React",
-        summary: "Desafio técnico de front-end da Ana Gaming, feito em TypeScript e React.",
-        tags: ["TypeScript", "React"],
-        intro: ["Desafio técnico de front-end que fiz para a Ana Gaming, em TypeScript e React. O código está no meu GitHub."],
+        name: "Painel de esportes",
+        badge: "DESAFIO TÉCNICO · 2025",
+        tagline: "front-end // Next.js · React · TypeScript",
+        summary:
+          "O desafio técnico que fiz para entrar na Ana Gaming: um painel de esportes com placares, odds e partidas favoritas, consumindo uma API externa.",
+        tags: ["Next.js", "React", "TypeScript"],
+        period: "maio de 2025",
+        role: "Desafio técnico de front-end, feito por mim para o processo seletivo.",
+        stack: ["Next.js", "React", "TypeScript", "styled-components"],
+        intro: [
+          "Foi o desafio técnico do processo seletivo da Ana Gaming, e o que me levou para lá. O pedido era um front-end de esportes: listei os campeonatos, os placares recentes e as melhores odds de cada partida, com uma lista de esportes favoritos.",
+          "Os dados vêm da The Odds API. O painel abre no Brasileirão Série A e também tem a página de uma partida e a lista de esportes. Usei Next.js com React, TypeScript e styled-components, e o código está no meu GitHub.",
+        ],
         links: [
           {
             label: "código no GitHub",
@@ -1297,14 +1305,17 @@ export const portfolio: Portfolio = {
       },
       {
         slug: "translated-taekim",
-        name: "translated-taekim",
+        name: "Leitor do Tae Kim",
         badge: "PROJETO PESSOAL",
-        tagline: "estudo de japonês",
+        tagline: "leitor web // JavaScript",
         summary:
-          "Tradução para o português do guia de gramática japonesa do Tae Kim, feita enquanto eu estudava japonês.",
-        tags: ["JavaScript", "Japonês"],
+          "Um leitor web para o guia de gramática japonesa do Tae Kim, com a tradução em português ao lado do original e o progresso de leitura salvo.",
+        tags: ["JavaScript", "Node.js"],
+        role: "Projeto pessoal, feito por mim enquanto estudava japonês.",
+        stack: ["JavaScript", "Node.js"],
         intro: [
-          "Tradução do guia de gramática japonesa do Tae Kim. Fiz enquanto estudava japonês, para ter o material em português.",
+          "O guia de gramática japonesa do Tae Kim só existe em inglês, e eu queria estudar com ele em português. Então fiz um leitor: ele busca as 62 páginas originais, mostra a tradução ao lado do texto em inglês e guarda até onde eu li.",
+          "A interface tem navegação lateral e modo escuro, e dá para adicionar outro idioma sem reescrever o leitor. É um projeto pessoal, feito com ajuda de IA, e não tem ligação com o autor do guia.",
         ],
         links: [
           { label: "código no GitHub", href: "https://github.com/karinzitta/translated-taekim" },
@@ -1323,7 +1334,6 @@ export const portfolio: Portfolio = {
     socials: [
       { platform: "github", label: "github.com/karinzitta", href: "https://github.com/karinzitta" },
       { platform: "linkedin", label: "in/karinzitta", href: "https://www.linkedin.com/in/karinzitta" },
-      { platform: "instagram", label: "@karinfoyu", href: "https://instagram.com/karinfoyu" },
       { platform: "site", label: "karinzitta.dev", href: "https://karinzitta.dev" },
     ],
   },

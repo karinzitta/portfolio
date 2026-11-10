@@ -46,7 +46,7 @@ export function personJsonLd() {
     name: person,
     url: site.url,
     image: `${site.url}${portfolio.profile.portrait.image ?? ""}`,
-    jobTitle: "Desenvolvedora full-stack",
+    jobTitle: "Engenheira de Software",
     email: `mailto:${portfolio.contact.email}`,
     knowsAbout: portfolio.skills.groups.flatMap((g) => g.items),
     sameAs: portfolio.contact.socials.filter((s) => s.platform !== "site").map((s) => s.href),

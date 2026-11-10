@@ -491,6 +491,13 @@ h2.h2 {
 }
 
 /* skills */
+.skillnote {
+  max-width: 720px;
+  margin: 0 0 18px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
 .skillgrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -786,4 +793,30 @@ a.projcard:hover {
 }
 a.projcard:hover .projlink {
   color: var(--pink-3);
+}
+
+/* 404 */
+.miss {
+  min-height: 62vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 72px 0 40px;
+}
+.miss h1 {
+  margin: 14px 0 16px;
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+.miss h1 .dot {
+  color: var(--pink);
+}
+.miss p {
+  max-width: 460px;
+  margin: 0 0 28px;
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: var(--muted);
 }
