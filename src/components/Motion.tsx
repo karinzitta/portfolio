@@ -37,7 +37,7 @@ const STAGGER = [
   ".pj-end",
 ].join(",");
 
-const STEP = 65; // ms entre um filho e o próximo
+const STEP = 84; // ms entre um filho e o próximo
 const MAX_STEPS = 12;
 
 declare global {
@@ -75,9 +75,11 @@ function prepareStagger(el: HTMLElement) {
 }
 
 // Mapas: zonas, depois as caixas uma a uma, cada seta logo depois da caixa
-// dela, e por fim o painel e a nota. Uns 1s no total.
+// dela, e por fim o painel e a nota. Uns 1,3s no total.
+const PACE = 1.3; // tudo um pouco mais calmo
+
 function prepareMap(fig: HTMLElement) {
-  const set = (el: Element, ms: number) => (el as HTMLElement).style.setProperty("--d", `${Math.round(ms)}ms`);
+  const set = (el: Element, ms: number) => (el as HTMLElement).style.setProperty("--d", `${Math.round(ms * PACE)}ms`);
 
   fig.querySelectorAll(".dg-zone").forEach((z, i) => set(z, i * 45));
 

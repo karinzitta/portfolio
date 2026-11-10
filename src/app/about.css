@@ -89,7 +89,7 @@
 }
 html.js .rm::before {
   transform: scaleY(0);
-  transition: transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.15s;
+  transition: transform 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s;
 }
 html.js .rm.is-in::before {
   transform: none;

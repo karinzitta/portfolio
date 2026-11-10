@@ -44,9 +44,9 @@
 
   html.js:not(.motion-off) [data-reveal].is-in,
   html.js:not(.motion-off) [data-reveal-stagger].is-in > * {
-    animation: rv-up 0.55s var(--rv-ease) both;
+    animation: rv-up 0.72s var(--rv-ease) both;
     animation-fill-mode: backwards;
-    animation-delay: calc(var(--i, 0) * 65ms);
+    animation-delay: calc(var(--i, 0) * 84ms);
   }
   html.js:not(.motion-off) [data-reveal="scale"].is-in {
     animation-name: rv-scale;
@@ -54,12 +54,12 @@
 
   /* imagens: abrem de cima pra baixo, com uma linha passando na borda */
   html.js:not(.motion-off) [data-reveal="wipe"].is-in {
-    animation: rv-wipe 0.7s var(--rv-ease) backwards;
-    animation-delay: calc(var(--i, 0) * 65ms);
+    animation: rv-wipe 0.91s var(--rv-ease) backwards;
+    animation-delay: calc(var(--i, 0) * 84ms);
   }
   html.js:not(.motion-off) [data-reveal="wipe"].is-in .zoom-body {
-    animation: rv-focus 0.8s var(--rv-ease) backwards;
-    animation-delay: calc(var(--i, 0) * 65ms);
+    animation: rv-focus 1.04s var(--rv-ease) backwards;
+    animation-delay: calc(var(--i, 0) * 84ms);
   }
   html.js:not(.motion-off) [data-reveal="wipe"]::after {
     content: "";
@@ -75,8 +75,8 @@
     box-shadow: 0 0 16px 3px rgba(255, 61, 138, 0.6);
   }
   html.js:not(.motion-off) [data-reveal="wipe"].is-in::after {
-    animation: rv-scan 0.7s var(--rv-ease);
-    animation-delay: calc(var(--i, 0) * 65ms);
+    animation: rv-scan 0.91s var(--rv-ease);
+    animation-delay: calc(var(--i, 0) * 84ms);
   }
 
   /* mapas: zonas, caixas uma a uma, setas desenhadas a partir da origem */
@@ -86,15 +86,15 @@
     opacity: 0;
   }
   html.js:not(.motion-off) .dg-figure.is-in :is(.dg-legend, .dg-foot) {
-    animation: rv-up 0.45s var(--rv-ease) backwards;
+    animation: rv-up 0.59s var(--rv-ease) backwards;
     animation-delay: var(--d, 0ms);
   }
   html.js:not(.motion-off) .dg-figure.is-in .dg-zone {
-    animation: rv-zone 0.45s var(--rv-ease) backwards;
+    animation: rv-zone 0.59s var(--rv-ease) backwards;
     animation-delay: var(--d, 0ms);
   }
   html.js:not(.motion-off) .dg-figure.is-in :is(.dg-box, .dg-panel) {
-    animation: rv-box 0.45s var(--rv-ease) backwards;
+    animation: rv-box 0.59s var(--rv-ease) backwards;
     animation-delay: var(--d, 0ms);
   }
   html.js:not(.motion-off) .dg-figure .dg-box::after {
@@ -108,16 +108,16 @@
       no-repeat;
   }
   html.js:not(.motion-off) .dg-figure.is-in .dg-box::after {
-    animation: rv-sweep 0.6s var(--rv-ease);
-    animation-delay: calc(var(--d, 0ms) + 80ms);
+    animation: rv-sweep 0.78s var(--rv-ease);
+    animation-delay: calc(var(--d, 0ms) + 104ms);
   }
   html.js:not(.motion-off) .dg-figure.is-in .dg-w > svg {
-    animation: rv-draw 0.34s var(--rv-ease) backwards;
+    animation: rv-draw 0.44s var(--rv-ease) backwards;
     animation-delay: var(--d, 0ms);
   }
   html.js:not(.motion-off) .dg-figure.is-in .dg-wl {
-    animation: rv-fade 0.3s var(--rv-ease) backwards;
-    animation-delay: calc(var(--d, 0ms) + 180ms);
+    animation: rv-fade 0.39s var(--rv-ease) backwards;
+    animation-delay: calc(var(--d, 0ms) + 234ms);
   }
   .dg-w {
     --draw-from: inset(-14px 100% -14px -14px);
