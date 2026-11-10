@@ -58,7 +58,7 @@ export const portfolio: Portfolio = {
         title: "Performance",
         chips: ["Rust", "Redis", "Cache", "Filas"],
         description:
-          "Encontro gargalos e preparo sistemas para aguentar volume, com cache, processamento em lote, filas e código enxuto onde ele faz diferença. Já mantive mais de 150 mil dispositivos enviando dados a cada minuto para um único servidor, sem nenhuma queda.",
+          "Encontro gargalos e preparo sistemas para aguentar volume, com cache, processamento em lote, filas e código enxuto onde ele faz diferença. Desenvolvi um sistema que recebe dados de mais de 150 mil dispositivos a cada minuto para um único servidor, sem nenhuma queda.",
       },
       {
         num: "02",
