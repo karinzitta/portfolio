@@ -50,7 +50,7 @@ export const portfolio: Portfolio = {
       captionName: "Karin Elizabeth",
       captionRole: "// dev full-stack",
       tag: "@karinzitta",
-      image: "/me.png",
+      image: "/me.webp",
     },
     focusCards: [
       {

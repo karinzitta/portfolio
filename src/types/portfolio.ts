@@ -72,7 +72,7 @@ export type AboutPage = {
   facts: Stat[];
   pillarsTitle: string;
   how: { title: string; paragraphs: string[] };
-  roadmap: { title: string; note?: string; steps: RoadmapStep[] };
+  roadmap: { title: string; steps: RoadmapStep[] };
   study: { title: string; paragraphs: string[] };
   principlesTitle: string;
   cta: { title: string; body: string; primary: Cta; secondary: Cta };
